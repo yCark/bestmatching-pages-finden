@@ -27,8 +27,7 @@ def setup_streamlit_interface():
     st.markdown(
         """
         <p style="font-style: italic;">
-            Created by <a href="https://twitter.com/LeeFootSEO" target="_blank">LeeFootSEO</a> |
-            <a href="https://leefoot.co.uk" target="_blank">More Apps & Scripts on my Website</a>
+            ...</a>
         </p>
         """,
         unsafe_allow_html=True
@@ -84,17 +83,17 @@ def show_instructions_expander():
     Creates an expander in the Streamlit interface to display instructions on how to use the tool.
     """
     instructions = (
-        "- Crawl both the staging and live Websites using Screaming Frog SEO Spider.\n"
+        "- Screaming Frog Crawlergebnisse von alter und neuer Seite nutzen.\n"
         "- Export the HTML as CSV Files.\n"
-        "- Upload your 'Live' and 'Staging' CSV files using the file uploaders below.\n"
-        "- By Default the app looks for columns named 'Address' 'H1-1' and 'Title 1' "
-        "but they can be manually mapped if not found.\n"
-        "- Select up to 3 columns that you want to match.\n"
-        "- Click the 'Process Files' button to start the matching process.\n"
-        "- Once processed, a download link for the output file will be provided.\n"
-        "- Statistic such as median match score and a total mediam similarity score "
-        "will be shown. Run the script with a different combination of columns to "
-        "get the best score!"
+        "- Upload 'alte' und  'neue' crawl files mit  file uploaders unten.\n"
+        "- Standard ist Suche nach Spalten mit Namen 'Address' 'H1-1' und 'Title 1' "
+        "können manuell zugeordnet werden, wenn nicht direkt gefunden.\n"
+        "-  bis zu 3 Spalten, für Abgleich wählen.\n"
+        "- Auf'Process Files' button klicken um den Abgleichvorgang zu starten..\n"
+        "- Nach  Verarbeitung wird  Download-Link mit Ergebnis bereitgestellt.\n"
+        "- Gezeigte Ähnlichkeitsstatistiken sind: Übereinstimmungscores und die Gesamte Median-Ähnlichkeit "
+        "Zum Vergleichen Skript mit anderen Kombination von Spalten versuchen"
+        "was am besten passt!"
     )
     with st.expander("How to Use This Tool"):
         st.write(instructions)
