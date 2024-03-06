@@ -83,16 +83,16 @@ def show_instructions_expander():
     Creates an expander in the Streamlit interface to display instructions on how to use the tool.
     """
     instructions = (
-        "- Screaming Frog Crawlergebnisse von alter und neuer Seite nutzen.\n"
-        "- Export the HTML as CSV Files.\n"
-        "- Upload 'alte' und  'neue' crawl files mit  file uploaders unten.\n"
-        "- Standard ist Suche nach Spalten mit Namen 'Address' 'H1-1' und 'Title 1' "
+        "- 1. Screaming Frog Crawlergebnisse von alter und neuer Seite nutzen.\n"
+        "- am besten als CSV Files exportieren.\n"
+        "- 2. Upload 'alte' und  'neue' crawl files mit file uploaders unten.\n"
+        "- 3. Standard ist Suche nach Spalten mit Namen 'Address' 'H1-1' und 'Title 1' "
         "können manuell zugeordnet werden, wenn nicht direkt gefunden.\n"
         "-  bis zu 3 Spalten, für Abgleich wählen.\n"
-        "- Auf'Process Files' button klicken um den Abgleichvorgang zu starten..\n"
-        "- Nach  Verarbeitung wird  Download-Link mit Ergebnis bereitgestellt.\n"
-        "- Gezeigte Ähnlichkeitsstatistiken sind: Übereinstimmungscores und die Gesamte Median-Ähnlichkeit "
-        "Zum Vergleichen Skript mit anderen Kombination von Spalten versuchen"
+        "- 4. Auf'Process Files' button klicken um den Abgleichvorgang zu starten..\n"
+        "- 5. Nach  Verarbeitung wird  Download-Link mit Ergebnis bereitgestellt.\n"
+        "- Gezeigte Ähnlichkeitsstatistiken sind: Übereinstimmungscores und die Gesamte Median-Ähnlichkeit.\n"
+        " - 6. Zum Vergleichen Skript mit anderen Kombination von Spalten versuchen"
         "was am besten passt!"
     )
     with st.expander("How to Use This Tool"):
@@ -878,12 +878,12 @@ def main():
         selected_model = st.selectbox("Select Matching Model", model_options)
 
         if selected_model == "TF-IDF":
-            st.write("Use TF-IDF for comprehensive text analysis, suitable for most use cases.")
+            st.write("Standardmodell für  Matching, Vergleicht Inhaltlcihe Relevanz basierend der Bedeutung auf Wortebene, erkennt an sich am besten Übereinstimmung zwischen URLs und Inhalten , i.e. vorher-nacher.")
         elif selected_model == "Edit Distance":
             st.write(
-                "Edit Distance is useful for matching based on character-level differences, such as small text variations.")
+                "Bei Migration kann es eingesetzt werden, um exakte oder nahezu exakte Übereinstimmungen zwischen URLs oder Inhaltsausschnitten zu finden, die geringfügige Variationen aufweisen. Dies ist besonders nützlich für die Identifizierung und Korrektur von Diskrepanzen in URLs oder Inhalten, die während des Migrationsprozesses geringfügig geändert wurden.")
         elif selected_model == "RapidFuzz":
-            st.write("RapidFuzz is efficient for large datasets, offering fast and approximate string matching.")
+            st.write(" RapidFuzz für schnellen Einsatz mit sehr großen Datensätzen, schnelles String-Matching für effizienten Abgleich von URLs oder Inhalten.")
 
     file_live, file_staging = create_file_uploader_widgets()
     if file_live and file_staging:
